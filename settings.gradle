@@ -1,9 +1,11 @@
-rootProject.name = 'mediabase'
-include "applications:mediabase"
-include "components:movies"
-include "components:podcasts"
-include "applications:movies-ms"
-include "applications:podcasts-ms"
+rootProject.name = 'prftmgmt'
+include "applications:prftmgmt"
+include "components:timesheets"
+include "components:tickets"
+include "applications:timesheets-ms"
+include "applications:tickets-ms"
+
+
 include "components:ui"
 
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mediabase.iml" filepath="$PROJECT_DIR$/.idea/modules/mediabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/mediabase.applications.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/mediabase.applications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.main.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.test.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/mediabase/mediabase.applications.mediabase.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.test.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/movies-ms/mediabase.applications.movies-ms.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.test.iml" filepath="$PROJECT_DIR$/.idea/modules/applications/podcasts-ms/mediabase.applications.podcasts-ms.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/mediabase.components.iml" filepath="$PROJECT_DIR$/.idea/modules/components/mediabase.components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.iml" filepath="$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.main.iml" filepath="$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.test.iml" filepath="$PROJECT_DIR$/.idea/modules/components/movies/mediabase.components.movies.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.iml" filepath="$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.main.iml" filepath="$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.test.iml" filepath="$PROJECT_DIR$/.idea/modules/components/podcasts/mediabase.components.podcasts.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.iml" filepath="$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.main.iml" filepath="$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.test.iml" filepath="$PROJECT_DIR$/.idea/modules/components/ui/mediabase.components.ui.test.iml" />
+    </modules>
+  </component>
+</project>

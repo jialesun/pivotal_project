@@ -1,0 +1,42 @@
+package com.example.prftmgmt;
+
+import com.example.prftmgmt.timesheetsui.ActionServlet;
+import com.example.prftmgmt.timesheetsui.MovieClient;
+import com.example.prftmgmt.ticketsui.PodcastClient;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestOperations;
+
+@EnableCircuitBreaker
+@EnableEurekaClient
+@SpringBootApplication(exclude= {io.pivotal.spring.cloud.IssuerCheckConfiguration.class})
+public class Application {
+
+
+    public static void main(String... args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+    @LoadBalanced
+    @Bean
+    public ServletRegistrationBean registerActionServlet(ActionServlet actionServlet) {
+        return new ServletRegistrationBean(actionServlet, "/moviefun/*");
+    }
+
+
+
+    @Bean
+    public MovieClient movieClient(RestOperations restOperations) {
+        return new MovieClient("//movies-ms/movies", restOperations);
+    }
+
+    @Bean
+    public PodcastClient podcastClient(RestOperations restOperations) {
+        return new PodcastClient("//podcasts-ms/podcasts", restOperations);
+    }
+}
