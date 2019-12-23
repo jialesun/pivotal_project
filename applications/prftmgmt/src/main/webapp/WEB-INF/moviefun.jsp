@@ -95,14 +95,18 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${movies}" var="movie">
+    <c:forEach items="${timesheets}" var="timesheet">
       <tr>
-        <td><c:out value="${movie.title}"/></td>
-        <td><c:out value="${movie.director}"/></td>
-        <td><c:out value="${movie.genre}"/></td>
-        <td><c:out value="${movie.rating}"/></td>
-        <td><c:out value="${movie.year}"/></td>
-        <td><a href="?action=Remove&id=${movie.id}"><i
+        <td><c:out value="${timesheet.period}"/></td>
+        <td><c:out value="${timesheet.project}"/></td>
+        <td><c:out value="${timesheet.M}"/></td>
+        <td><c:out value="${timesheet.T}"/></td>
+        <td><c:out value="${timesheet.W}"/></td>
+        <td><c:out value="${timesheet.Th}"/></td>
+        <td><c:out value="${timesheet.F}"/></td>
+        <td><c:out value="${timesheet.total}"/></td>
+        <td><c:out value="${timesheet.status}"/></td>
+        <td><a href="?action=Remove&id=${timesheet.id}"><i
             class="icon-trash"></i></a></td>
       </tr>
     </c:forEach>

@@ -1,0 +1,19 @@
+spring:
+  mvc.view:
+    prefix: /WEB-INF/
+    suffix: .jsp
+  application:
+    name: prftmgmt
+
+
+logging.level:
+  root: WARN
+  com.example.prftmgmt.ticketsui: DEBUG
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000

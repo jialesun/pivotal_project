@@ -1,10 +1,9 @@
 package com.example.prftmgmt;
 
-
-import com.example.prftmgmt.timesheetsui.MovieClient;
-import com.example.prftmgmt.timesheetsui.MoviesInitialList;
-import com.example.prftmgmt.ticketsui.PodcastClient;
-import com.example.prftmgmt.ticketsui.PodcastsInitialList;
+import com.example.prftmgmt.timesheetsui.TimesheetsClient;
+import com.example.prftmgmt.timesheetsui.TimesheetsInitialList;
+import com.example.prftmgmt.ticketsui.TicketsClient;
+import com.example.prftmgmt.ticketsui.TicketsInitialList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,17 +11,16 @@ import java.util.Map;
 
 @Controller
 public class RootController {
-    private MovieClient movieClient;
-    private PodcastClient podcastClient;
-    //private PodcastRepository podcastRepository;
-    private MoviesInitialList moviesInitialList;
-    private PodcastsInitialList podcastsInitialList;
+    private TimesheetsClient timesheetsClient;
+    private TicketsClient ticketsClient;
+    private TimesheetsInitialList timesheetsInitialList;
+    private TicketsInitialList ticketsInitialList;
 
-    public RootController(MovieClient movieClient, PodcastClient podcastClient, MoviesInitialList moviesInitialList, PodcastsInitialList podcastsInitialList) {
-        this.movieClient = movieClient;
-        this.podcastClient = podcastClient;
-        this.moviesInitialList = moviesInitialList;
-        this.podcastsInitialList = podcastsInitialList;
+    public RootController(TimesheetsClient timesheetsClient, TicketsClient ticketsClient, TimesheetsInitialList timesheetsInitialList, TicketsInitialList ticketsInitialList) {
+        this.timesheetsClient = timesheetsClient;
+        this.ticketsClient = ticketsClient;
+        this.timesheetsInitialList = timesheetsInitialList;
+        this.ticketsInitialList = ticketsInitialList;
     }
 
     @GetMapping("/")
@@ -33,11 +31,11 @@ public class RootController {
     @GetMapping("/setup")
     public String setupDatabase(Map<String, Object> model) {
 
-        moviesInitialList.asList().forEach(movieClient::create);
-        model.put("movies", movieClient.getAll());
+        timesheetsInitialList.asList().forEach(timesheetsClient::create);
+        model.put("timesheets", timesheetsClient.getAll());
 
-        podcastsInitialList.asList().forEach(podcastClient::create);
-        model.put("podcasts", podcastClient.getAll());
+        ticketsInitialList.asList().forEach(ticketsClient::create);
+        model.put("tickets", timesheetsClient.getAll());
 
 
         return "setup";

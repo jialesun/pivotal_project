@@ -9,4 +9,4 @@ spring:
      name: timesheets-ms
 
   datasource:
-    url: jdbc:mysql://localhost:3306/movies?useSSL=false&user=root&password=000315
+    url: jdbc:mysql://localhost:3306/timesheets_ms?useSSL=false&user=root&password=password

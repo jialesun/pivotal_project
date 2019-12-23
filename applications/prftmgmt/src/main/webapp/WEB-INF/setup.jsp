@@ -70,7 +70,7 @@
       <td><b>Genre</b></td>
     </tr>
 
-    <c:forEach items="${requestScope.movies}" var="movie">
+    <c:forEach items="${requestScope.timesheets}" var="timesheet">
       <tr>
         <td>${ movie.title }</td>
         <td>${ movie.director }</td>
@@ -89,11 +89,14 @@
       <td><b>URL</b></td>
     </tr>
 
-    <c:forEach items="${requestScope.podcasts}" var="podcast">
+    <c:forEach items="${requestScope.tickets}" var="ticket">
       <tr>
-        <td>${ podcast.title }</td>
-        <td>${ podcast.description }</td>
-        <td>${ podcast.url }</td>
+        <td> ${ticket.name} </td>
+        <td> ${ticket.desc} </td>
+        <td> ${ticket.lead} </td>
+        <td> ${ticket.status} </td>
+        <td> ${ticket.stDate} </td>
+        <td> ${ticket.endDate} </td>
       </tr>
     </c:forEach>
 

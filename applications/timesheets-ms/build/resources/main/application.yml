@@ -1,0 +1,12 @@
+server.port: 8081
+
+spring:
+  jpa:
+    generate-ddl: true
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+
+  application:
+     name: timesheets-ms
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/timesheets_ms?useSSL=false&user=root&password=password
