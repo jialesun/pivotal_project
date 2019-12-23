@@ -11,33 +11,32 @@ public class Ticket implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
-    private String desc;
-    private String lead;
+    private String description;
+    private String teamLead;
     private String status;
     private String stDate;
     private String endDate;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     public Ticket() {
     }
 
-    public Ticket(String name, String desc, String lead, String status, String stDate, String endDate) {
+    public Ticket(String name, String description, String teamLead, String status, String stDate, String endDate) {
         this.name = name;
-        this.desc = desc;
-        this.lead = lead;
+        this.description = description;
+        this.teamLead = teamLead;
         this.status = status;
         this.stDate = stDate;
         this.endDate = endDate;
     }
 
-    public Ticket(String name, String desc, String lead) {
+    public Ticket(String name, String desc, String teamLead) {
         this.name = name;
-        this.desc = desc;
-        this.lead = lead;
+        this.description = description;
+        this.teamLead = teamLead;
         this.status = "OPEN";
         this.stDate = "-";
         this.endDate = "-";
@@ -51,20 +50,20 @@ public class Ticket implements Serializable {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDesc(String description) {
+        this.description = description;
     }
 
-    public String getLead() {
-        return lead;
+    public String getTeamLead() {
+        return teamLead;
     }
 
-    public void setLead(String lead) {
-        this.lead = lead;
+    public void setTeamLead(String teamLead) {
+        this.teamLead = teamLead;
     }
 
     public String getStatus() {

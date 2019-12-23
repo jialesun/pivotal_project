@@ -9,7 +9,8 @@ import java.util.List;
 public class TimesheetsInitialList {
 
     public List<TimesheetUI> asList() {
-        return Arrays.asList(new TimesheetUI(1, "BSC", 8, 8, 8, 8, 8, 40, "Approved"),
+        return Arrays.asList(
+                new TimesheetUI(1, "BSC", 8, 8, 8, 8, 8, 40, "Approved"),
                 new TimesheetUI(2, "BSC", 8, 8, 8, 8, 8, 40, "Approved"),
                 new TimesheetUI(3, "BSC", 8, 8, 8, 8, 8, 40, "Approved"),
                 new TimesheetUI(4, "BSC", 8, 8, 8, 8, 8, 40, "Approved"),

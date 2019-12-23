@@ -72,8 +72,8 @@
             <c:forEach items="${requestScope.tickets}" var="ticket">
                 <tr>
                     <td><a href="${ticket.url}">${ticket.name}</a></td>
-                    <td> ${ticket.desc} </td>
-                    <td> ${ticket.lead} </td>
+                    <td> ${ticket.description} </td>
+                    <td> ${ticket.teamLead} </td>
                     <td> ${ticket.status} </td>
                     <td> ${ticket.stDate} </td>
                     <td> ${ticket.endDate} </td>

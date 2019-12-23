@@ -92,7 +92,7 @@
     <c:forEach items="${requestScope.tickets}" var="ticket">
       <tr>
         <td> ${ticket.name} </td>
-        <td> ${ticket.desc} </td>
+        <td> ${ticket.description} </td>
         <td> ${ticket.lead} </td>
         <td> ${ticket.status} </td>
         <td> ${ticket.stDate} </td>
@@ -103,7 +103,7 @@
   </table>
 
   <h2>Continue</h2>
-  <a href="moviefun">Go to main app</a>
+  <a href="timesheets">Go to main app</a>
 
 </div>
 <!-- /container -->

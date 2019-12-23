@@ -9,7 +9,7 @@ spring:
     name: tickets-ms
 
   datasource:
-    url: jdbc:mysql://localhost:3306/tickets_ms?useSSL=false&user=root&password=password
+    url: jdbc:mysql://localhost:3306/tickets?useSSL=false&user=root&password=password
 
 
 

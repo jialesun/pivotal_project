@@ -29,9 +29,9 @@ public class TicketsClient {
         restOperations.postForEntity(ticketURL, ticket, TicketUI.class);
     }
 
-    @HystrixCommand(fallbackMethod="getAllFallback",commandProperties = {
-            @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
-    })
+//    @HystrixCommand(fallbackMethod="getAllFallback",commandProperties = {
+//            @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
+//    })
     public List<TicketUI> getAll() {
         List<TicketUI> read = restOperations.exchange(ticketURL, HttpMethod.GET, null, ticketListType).getBody();
         log.debug("Read {} tickets from {}", read.size(), ticketURL);

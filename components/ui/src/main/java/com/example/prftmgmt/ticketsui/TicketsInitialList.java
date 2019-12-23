@@ -9,18 +9,31 @@ import java.util.List;
 public class TicketsInitialList {
 
     public List<TicketUI> asList() {
-        return Arrays.asList(new TicketUI("Release_Jan",
+        return Arrays.asList(
+                new TicketUI("Release_Jan",
                         "January release",
-                        "Alex"),
+                        "Alex",
+                        "Open",
+                        "Jan",
+                        "May"),
                 new TicketUI("Release_Feb",
                         "February release",
-                        "Tom"),
+                        "Tom",
+                        "Open",
+                        "Jan",
+                        "May"),
                 new TicketUI("Release_Mar",
                         "March release",
-                        "John"),
+                        "John",
+                        "Open",
+                        "Jan",
+                        "May"),
                 new TicketUI("Release_Apr",
                         "April release",
-                        "Kate")
+                        "Kate",
+                        "Open",
+                        "Jan",
+                        "May")
         );
     }
-    }
+}

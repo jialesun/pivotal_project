@@ -10,38 +10,38 @@ public class TimesheetUI implements Serializable {
 
     private int period;
     private String project;
-    private int M;
-    private int T;
-    private int W;
-    private int Th;
-    private int F;
+    private int monday;
+    private int tuesday;
+    private int wednesday;
+    private int thursday;
+    private int friday;
     private int total;
     private String status;
 
     public TimesheetUI() {
     }
 
-    public TimesheetUI(int period, String project, int m, int t, int w, int th, int f, int total, String status) {
+    public TimesheetUI(int period, String project, int monday, int tuesday, int wednesday, int thursday, int friday, int total, String status) {
         this.period = period;
         this.project = project;
-        this.M = m;
-        this.T = t;
-        this.W = w;
-        this.Th = th;
-        this.F = f;
+        this.monday = monday;
+        this.tuesday = tuesday;
+        this.wednesday = wednesday;
+        this.thursday = thursday;
+        this.friday = friday;
         this.total = total;
         this.status = status;
     }
 
-    public TimesheetUI(int period, String project, int m, int t, int w, int th, int f) {
+    public TimesheetUI(int period, String project, int monday, int tuesday, int wednesday, int thursday, int friday) {
         this.period = period;
         this.project = project;
-        M = m;
-        T = t;
-        W = w;
-        Th = th;
-        F = f;
-        this.total = M + T + W + Th + F;
+        this.monday = monday;
+        this.tuesday = tuesday;
+        this.wednesday = wednesday;
+        this.thursday = thursday;
+        this.friday = friday;
+        this.total = monday + tuesday + wednesday + thursday + friday;
         this.status = "In Review";
     }
 
@@ -69,44 +69,44 @@ public class TimesheetUI implements Serializable {
         this.project = project;
     }
 
-    public int getM() {
-        return M;
+    public int getMonday() {
+        return monday;
     }
 
-    public void setM(int m) {
-        M = m;
+    public void setMonday(int monday) {
+        this.monday = monday;
     }
 
-    public int getT() {
-        return T;
+    public int getTuesday() {
+        return tuesday;
     }
 
-    public void setT(int t) {
-        T = t;
+    public void setTuesday(int tuesday) {
+        this.tuesday = tuesday;
     }
 
-    public int getW() {
-        return W;
+    public int getWednesday() {
+        return wednesday;
     }
 
-    public void setW(int w) {
-        W = w;
+    public void setWednesday(int wednesday) {
+        this.wednesday = wednesday;
     }
 
-    public int getTh() {
-        return Th;
+    public int getThursday() {
+        return thursday;
     }
 
-    public void setTh(int th) {
-        Th = th;
+    public void setThursday(int thursday) {
+        this.thursday = thursday;
     }
 
-    public int getF() {
-        return F;
+    public int getFriday() {
+        return friday;
     }
 
-    public void setF(int f) {
-        F = f;
+    public void setFriday(int friday) {
+        this.friday = friday;
     }
 
     public int getTotal() {
