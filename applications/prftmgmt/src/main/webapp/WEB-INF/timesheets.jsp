@@ -42,7 +42,26 @@
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
 </head>
-
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -51,16 +70,8 @@
       <a class="btn btn-navbar" data-toggle="collapse"
          data-target=".nav-collapse"> <span class="icon-bar"></span> <span
           class="icon-bar"></span> <span class="icon-bar"></span>
-      </a> <a class="brand" href="#">Mediabase</a>
+      </a> <a class="brand" href="#">Perficient Management System</a>
 
-      <form class="navbar-form pull-right">
-        <select name="field">
-          <option value="title">Title</option>
-          <option value="director">Director</option>
-          <option value="genre">Genre</option>
-        </select> <input type="text" name="key" size="20">
-        <button type="submit" class="btn">Search</button>
-      </form>
 
       <!--/.nav-collapse -->
     </div>
@@ -74,23 +85,28 @@
   <form class="movie-input-form form-inline" action="timesheets"
         method="post">
     <p>Add Movie</p>
-    <input type="text" name="title" placeholder="Title" size="29"/> <input
-      type="text" name="director" placeholder="Director" size="17"/> <input
-      type="text" name="genre" placeholder="Genre" size="14"/> <input
-      type="text" name="rating" placeholder="Rating" size="7"/> <input
-      type="text" name="year" placeholder="Year" size="4"
-      style="width: 110px;"/> <input type="submit" name="action"
-                                     class="btn btn-primary" value="Add"/>
+    <input type="text" name="period" placeholder="Period" size="4"/>
+    <input type="text" name="project" placeholder="Project" size="20"/>
+    <input type="text" name="m" placeholder="m" size="4"/>
+    <input type="text" name="t" placeholder="t" size="4"/>
+    <input type="text" name="w" placeholder="w" size="4"/>
+    <input type="text" name="th" placeholder="th" size="4"/>
+    <input type="text" name="f" placeholder="f" size="4"/>
+    <input type="submit" name="action" class="btn btn-primary" value="Add"/>
   </form>
-
-  <table class="table table-striped table-bordered">
+<input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search Project Name..."/>
+  <table id="myTable" class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th>Title</th>
-      <th>Director</th>
-      <th>Genre</th>
-      <th>Rating</th>
-      <th>Year</th>
+      <th><b>Period</b></th>
+      <th><b>Project</b></th>
+      <th><b>Monday</b></th>
+      <th><b>Tuesday</b></th>
+      <th><b>Wednesday</b></th>
+      <th><b>Thursday</b></th>
+      <th><b>Friday</b></th>
+      <th><b>Total</b></th>
+      <th><b>Status</b></th>
       <th>&nbsp;</th>
     </tr>
     </thead>

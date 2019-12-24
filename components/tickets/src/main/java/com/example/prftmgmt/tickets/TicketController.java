@@ -48,4 +48,21 @@ public class TicketController {
         return sortedList;
     }
 
+
+//    @GetMapping("/sort_name")
+//    public List<Ticket> getAllSortedName() {
+//        List<Ticket> sortedList = (List<Ticket>) ticketRepository.findAll();
+//        Comparator<Ticket> compareByName = (Ticket o1, Ticket o2) -> o1.getName().compareTo( o2.getName() );
+//        Collections.sort(sortedList, compareByName);
+//        return sortedList;
+//    }
+//
+//    @GetMapping("/sort_lead")
+//    public List<Ticket> getAllSortedLead() {
+//        List<Ticket> sortedList = (List<Ticket>) ticketRepository.findAll();
+//        Comparator<Ticket> compareByLead = (Ticket o1, Ticket o2) -> o1.getTeamLead().compareTo( o2.getTeamLead() );
+//        Collections.sort(sortedList, compareByLead);
+//        return sortedList;
+//    }
+
 }

@@ -35,7 +35,7 @@ public class RootController {
         model.put("timesheets", timesheetsClient.getAll());
 
         ticketsInitialList.asList().forEach(ticketsClient::create);
-        model.put("tickets", timesheetsClient.getAll());
+        model.put("tickets", ticketsClient.getAll());
 
 
         return "setup";

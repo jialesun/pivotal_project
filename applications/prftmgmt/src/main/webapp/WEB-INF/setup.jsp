@@ -60,40 +60,55 @@
 
 <div class="container">
 
-  <h1>Mediabase</h1>
+  <h1>Perficient Management System</h1>
 
-  <h2>Seeded database with the following movies</h2>
-  <table width="500">
+  <h2>Seeded database with the following Timesheets</h2>
+  <table width="1000">
     <tr>
-      <td><b>Title</b></td>
-      <td><b>Director</b></td>
-      <td><b>Genre</b></td>
+      <td><b>Period</b></td>
+      <td><b>Project</b></td>
+      <td><b>Monday</b></td>
+      <td><b>Tuesday</b></td>
+      <td><b>Wednesday</b></td>
+      <td><b>Thursday</b></td>
+      <td><b>Friday</b></td>
+      <td><b>Total</b></td>
+      <td><b>Status</b></td>
     </tr>
 
     <c:forEach items="${requestScope.timesheets}" var="timesheet">
       <tr>
-        <td>${ movie.title }</td>
-        <td>${ movie.director }</td>
-        <td>${ movie.genre }</td>
+        <td>${ timesheet.period }</td>
+        <td>${ timesheet.project }</td>
+        <td>${ timesheet.monday }</td>
+        <td>${ timesheet.tuesday }</td>
+        <td>${ timesheet.wednesday }</td>
+        <td>${ timesheet.thursday }</td>
+        <td>${ timesheet.friday }</td>
+        <td>${ timesheet.total }</td>
+        <td>${ timesheet.status }</td>
       </tr>
     </c:forEach>
 
   </table>
 
 
-  <h2>Seeded database with the following podcasts</h2>
+  <h2>Seeded database with the following Tickets</h2>
   <table width="1000">
     <tr>
-      <td><b>Title</b></td>
+      <td><b>Name</b></td>
       <td><b>Description</b></td>
-      <td><b>URL</b></td>
+      <td><b>Team Lead</b></td>
+      <td><b>Status</b></td>
+      <td><b>Start Date</b></td>
+      <td><b>End Date</b></td>
     </tr>
 
     <c:forEach items="${requestScope.tickets}" var="ticket">
       <tr>
         <td> ${ticket.name} </td>
         <td> ${ticket.description} </td>
-        <td> ${ticket.lead} </td>
+        <td> ${ticket.teamLead} </td>
         <td> ${ticket.status} </td>
         <td> ${ticket.stDate} </td>
         <td> ${ticket.endDate} </td>

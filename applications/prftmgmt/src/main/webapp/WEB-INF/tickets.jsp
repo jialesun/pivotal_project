@@ -42,6 +42,28 @@
 
 </head>
 
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -59,19 +81,33 @@
 
 <div class="container">
 
-    <h1>Podcasts</h1>
-    <table class="table table-striped table-bordered">
+    <h1>Tickets</h1>
+     <form class="movie-input-form form-inline" modelAttribute="addTicket" action="#" th:action="@{/tickets}" th:object="${TicketUI}"
+                    method="post">
+                <p>Add Tickets</p>
+                <input path="name" type="text" th:field="*{name}" name="Name" placeholder="Name" size="14"/>
+                <input path="description" type="text" th:field="*{description}" name="description" placeholder="description" size="14"/>
+                <input path="teamLead" type="text" th:field="*{teamLead}" name="teamLead" placeholder="teamLead" size="14"/>
+                <input type="submit" name="action" class="btn btn-primary" value="Add"/>
+        </form>
+    <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search..."/>
+
+    <table id="myTable" class="table table-striped table-bordered">
 
         <thead>
             <tr>
-                <td><b>Title</b></td>
+                <td><b>Name</b></td>
                 <td><b>Description</b></td>
+                <td><b>Team Lead</b></td>
+                <td><b>Status</b></td>
+                <td><b>Start Date</b></td>
+                <td><b>End Date</b></td>
             </tr>
         </thead>
         <tbody>
             <c:forEach items="${requestScope.tickets}" var="ticket">
                 <tr>
-                    <td><a href="${ticket.url}">${ticket.name}</a></td>
+                    <td> ${ticket.name} </td>
                     <td> ${ticket.description} </td>
                     <td> ${ticket.teamLead} </td>
                     <td> ${ticket.status} </td>
@@ -81,6 +117,7 @@
             </c:forEach>
         </tbody>
     </table>
+
 
 </div>
 <!-- /container -->
