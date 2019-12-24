@@ -51,8 +51,6 @@ public class TicketsClient {
         return lastRead;
     }
 
-
-
     public List<TicketUI> getAllSorted() {
         List<TicketUI> read = restOperations.exchange(ticketURL + "/sort", HttpMethod.GET, null, ticketListType).getBody();
         log.debug("Read {} sorted tickets from {}", read.size(), ticketURL);

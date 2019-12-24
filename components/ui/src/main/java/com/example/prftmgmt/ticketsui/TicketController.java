@@ -27,5 +27,7 @@ public class TicketController {
         return "tickets";
     }
 
+    @DeleteMapping("/tickets/{id}")
+
 
 }

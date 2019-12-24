@@ -82,12 +82,11 @@ function myFunction() {
 <div class="container">
 
     <h1>Tickets</h1>
-     <form class="movie-input-form form-inline" modelAttribute="addTicket" action="#" th:action="@{/tickets}" th:object="${TicketUI}"
-                    method="post">
+     <form class="movie-input-form form-inline" action="#" method="post">
                 <p>Add Tickets</p>
-                <input path="name" type="text" th:field="*{name}" name="name" placeholder="Name" size="14"/>
-                <input path="description" type="text" th:field="*{description}" name="description" placeholder="description" size="14"/>
-                <input path="teamLead" type="text" th:field="*{teamLead}" name="teamLead" placeholder="teamLead" size="14"/>
+                <input path="name" type="text" name="name" placeholder="Name" size="14"/>
+                <input path="description" type="text" name="description" placeholder="Description" size="14"/>
+                <input path="teamLead" type="text" name="teamLead" placeholder="Team Lead" size="14"/>
                 <input type="submit" name="action" class="btn btn-primary" value="Add"/>
         </form>
     <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search..."/>
@@ -113,6 +112,8 @@ function myFunction() {
                     <td> ${ticket.status} </td>
                     <td> ${ticket.stDate} </td>
                     <td> ${ticket.endDate} </td>
+                    <td><a href="?action=Remove&id=${ticket.id}"><i
+                                class="icon-trash"></i></a></td>
                 </tr>
             </c:forEach>
         </tbody>
