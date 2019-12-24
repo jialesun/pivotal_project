@@ -85,7 +85,7 @@ function myFunction() {
      <form class="movie-input-form form-inline" modelAttribute="addTicket" action="#" th:action="@{/tickets}" th:object="${TicketUI}"
                     method="post">
                 <p>Add Tickets</p>
-                <input path="name" type="text" th:field="*{name}" name="Name" placeholder="Name" size="14"/>
+                <input path="name" type="text" th:field="*{name}" name="name" placeholder="Name" size="14"/>
                 <input path="description" type="text" th:field="*{description}" name="description" placeholder="description" size="14"/>
                 <input path="teamLead" type="text" th:field="*{teamLead}" name="teamLead" placeholder="teamLead" size="14"/>
                 <input type="submit" name="action" class="btn btn-primary" value="Add"/>

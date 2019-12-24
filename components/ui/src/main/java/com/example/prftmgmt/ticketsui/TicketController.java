@@ -16,15 +16,13 @@ public class TicketController {
     @GetMapping("/tickets")
     public String allTickets(Map<String, Object> model) {
         model.put("tickets", ticketsClient.getAll());
-        TicketUI ticketUI = new TicketUI();
-        model.put("addTicket", ticketUI);
         return "tickets";
     }
 
     @PostMapping("/tickets")
-    public String create (@ModelAttribute TicketUI ticketUI, Map<String, Object> model) {
-        TicketUI ticketUI2 = new TicketUI(ticketUI.getName(), ticketUI.getDescription(), ticketUI.getTeamLead());
-        ticketsClient.create(ticketUI2);
+    public String create (@RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("teamLead") String teamLead, Map<String, Object> model) {
+        TicketUI ticketUI = new TicketUI(name, description, teamLead);
+        ticketsClient.create(ticketUI);
         model.put("tickets", ticketsClient.getAll());
         return "tickets";
     }
