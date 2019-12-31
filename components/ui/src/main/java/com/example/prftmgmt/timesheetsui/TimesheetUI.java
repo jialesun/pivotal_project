@@ -8,7 +8,7 @@ public class TimesheetUI implements Serializable {
 
     private long id;
 
-    private int period;
+    private String period;
     private String project;
     private int monday;
     private int tuesday;
@@ -21,7 +21,7 @@ public class TimesheetUI implements Serializable {
     public TimesheetUI() {
     }
 
-    public TimesheetUI(int period, String project, int monday, int tuesday, int wednesday, int thursday, int friday, int total, String status) {
+    public TimesheetUI(String period, String project, int monday, int tuesday, int wednesday, int thursday, int friday, int total, String status) {
         this.period = period;
         this.project = project;
         this.monday = monday;
@@ -33,7 +33,7 @@ public class TimesheetUI implements Serializable {
         this.status = status;
     }
 
-    public TimesheetUI(int period, String project, int monday, int tuesday, int wednesday, int thursday, int friday) {
+    public TimesheetUI(String period, String project, int monday, int tuesday, int wednesday, int thursday, int friday) {
         this.period = period;
         this.project = project;
         this.monday = monday;
@@ -53,11 +53,11 @@ public class TimesheetUI implements Serializable {
         this.id = id;
     }
 
-    public int getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 

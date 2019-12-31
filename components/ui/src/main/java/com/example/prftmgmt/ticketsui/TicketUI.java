@@ -32,7 +32,7 @@ public class TicketUI implements Serializable {
         this.name = name;
         this.description = description;
         this.teamLead = teamLead;
-        this.status = "OPEN";
+        this.status = "In Review";
         this.stDate = "-";
         this.endDate = "-";
     }

@@ -85,28 +85,28 @@ function myFunction() {
   <form class="movie-input-form form-inline" action="timesheets"
         method="post">
     <p>Add Movie</p>
-    <input type="text" name="period" placeholder="Period" size="4"/>
-    <input type="text" name="project" placeholder="Project" size="20"/>
-    <input type="text" name="m" placeholder="m" size="4"/>
-    <input type="text" name="t" placeholder="t" size="4"/>
-    <input type="text" name="w" placeholder="w" size="4"/>
-    <input type="text" name="th" placeholder="th" size="4"/>
-    <input type="text" name="f" placeholder="f" size="4"/>
+    <input path="period" type="text" name="period" placeholder="Period" size="4"/>
+    <input path="project" type="text" name="project" placeholder="Project" size="20"/>
+    <input path="monday" type="text" name="monday" placeholder="m" size="4"/>
+    <input path="tuesday" type="text" name="tuesday" placeholder="t" size="4"/>
+    <input path="wednesday" type="text" name="wednesday" placeholder="w" size="4"/>
+    <input path="thursday" type="text" name="thursday" placeholder="th" size="4"/>
+    <input path="friday" type="text" name="friday" placeholder="f" size="4"/>
     <input type="submit" name="action" class="btn btn-primary" value="Add"/>
   </form>
 <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Search Project Name..."/>
   <table id="myTable" class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th><b>Period</b></th>
-      <th><b>Project</b></th>
+      <th><a href="/timesheets?action=sort&sort=period"><b>Period</b></a></th>
+      <th><a href="/timesheets?action=sort&sort=project"><b>Project</b></a></th>
       <th><b>Monday</b></th>
       <th><b>Tuesday</b></th>
       <th><b>Wednesday</b></th>
       <th><b>Thursday</b></th>
       <th><b>Friday</b></th>
-      <th><b>Total</b></th>
-      <th><b>Status</b></th>
+      <th><a href="/timesheets?action=sort&sort=total"><b>Total</b></a></th>
+      <th><a href="/timesheets?action=sort&sort=status"><b>Status</b></a></th>
       <th>&nbsp;</th>
     </tr>
     </thead>
@@ -122,7 +122,7 @@ function myFunction() {
         <td><c:out value="${timesheet.friday}"/></td>
         <td><c:out value="${timesheet.total}"/></td>
         <td><c:out value="${timesheet.status}"/></td>
-        <td><a href="?action=Remove&id=${timesheet.id}"><i
+        <td><a href="?action=remove&id=${timesheet.id}"><i
             class="icon-trash"></i></a></td>
       </tr>
     </c:forEach>

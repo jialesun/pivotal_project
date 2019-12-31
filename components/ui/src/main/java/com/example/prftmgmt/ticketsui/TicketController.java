@@ -13,12 +13,6 @@ public class TicketController {
         this.ticketsClient = ticketsClient;
     }
 
-    @GetMapping("/tickets")
-    public String allTickets(Map<String, Object> model) {
-        model.put("tickets", ticketsClient.getAll());
-        return "tickets";
-    }
-
     @PostMapping("/tickets")
     public String create (@RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("teamLead") String teamLead, Map<String, Object> model) {
         TicketUI ticketUI = new TicketUI(name, description, teamLead);
@@ -27,7 +21,37 @@ public class TicketController {
         return "tickets";
     }
 
-    @DeleteMapping("/tickets/{id}")
+    @GetMapping("/tickets")
+    public String processGetRequests(@RequestParam(value="sort", required=false) String sort,
+                                 @RequestParam(value="id", required=false) Long id,
+                                 @RequestParam(value="action", required=false) String action,
+                                 Map<String, Object> model) {
+        if(action == null)
+            model.put("tickets", ticketsClient.getAll());
+        else if(action.equals("sort")) {
+            if(sort == null)
+                model.put("tickets", ticketsClient.getAllSort("id"));
+            else
+                model.put("tickets", ticketsClient.getAllSort(sort));
+        }
+        else if(action.equals("remove")) {
+            if(id == null)
+                model.put("tickets", ticketsClient.getAll());
+            else {
+                ticketsClient.delete(id.longValue());
+                model.put("tickets", ticketsClient.getAll());
+            }
+        }
+        else if(action.equals("display")) {
+            if(id == null)
+                model.put("tickets", ticketsClient.getAll());
+            else
+                model.put("tickets", ticketsClient.display(id.longValue()));
+        }
 
+
+        else model.put("tickets", ticketsClient.getAll());
+        return "tickets";
+    }
 
 }

@@ -24,7 +24,7 @@
 <html lang="${language}">
 <head>
     <meta charset="utf-8">
-    <title>Podcasts</title>
+    <title>Tickets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -95,12 +95,13 @@ function myFunction() {
 
         <thead>
             <tr>
-                <td><b>Name</b></td>
+                <td><a href="/tickets?action=sort&sort=name"><b>Name</b></a></td>
                 <td><b>Description</b></td>
-                <td><b>Team Lead</b></td>
-                <td><b>Status</b></td>
+                <td><a href="/tickets?action=sort&sort=lead"><b>Team Lead</b></a></td>
+                <td><a href="/tickets?action=sort&sort=status"><b>Status</b></a></td>
                 <td><b>Start Date</b></td>
                 <td><b>End Date</b></td>
+                <td>Del</td>
             </tr>
         </thead>
         <tbody>
@@ -112,7 +113,7 @@ function myFunction() {
                     <td> ${ticket.status} </td>
                     <td> ${ticket.stDate} </td>
                     <td> ${ticket.endDate} </td>
-                    <td><a href="?action=Remove&id=${ticket.id}"><i
+                    <td><a href="?action=remove&id=${ticket.id}"><i
                                 class="icon-trash"></i></a></td>
                 </tr>
             </c:forEach>

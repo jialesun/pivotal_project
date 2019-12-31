@@ -29,9 +29,18 @@ public class TicketsClient {
         restOperations.postForEntity(ticketURL, ticket, TicketUI.class);
     }
 
-//    @HystrixCommand(fallbackMethod="getAllFallback",commandProperties = {
-//            @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
-//    })
+    public void delete(long id) {
+        restOperations.delete(ticketURL + "/" + id);
+    }
+
+    public List<TicketUI> display(long id) {
+       List<TicketUI> lst = restOperations.exchange(ticketURL + "/" + id, HttpMethod.GET, null, ticketListType).getBody();
+       return lst;
+    }
+
+    @HystrixCommand(fallbackMethod="getAllFallback",commandProperties = {
+            @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
+    })
     public List<TicketUI> getAll() {
         List<TicketUI> read = restOperations.exchange(ticketURL, HttpMethod.GET, null, ticketListType).getBody();
         log.debug("Read {} tickets from {}", read.size(), ticketURL);
@@ -51,16 +60,27 @@ public class TicketsClient {
         return lastRead;
     }
 
-    public List<TicketUI> getAllSorted() {
-        List<TicketUI> read = restOperations.exchange(ticketURL + "/sort", HttpMethod.GET, null, ticketListType).getBody();
-        log.debug("Read {} sorted tickets from {}", read.size(), ticketURL);
-
-        lastRead.clear();
-        int copyCount = (read.size() < CACHE_SIZE) ? read.size() : CACHE_SIZE;
-        for (int i =0; i < copyCount; i++)
-            lastRead.add(read.get(i));
-        log.debug("Copied {} sorted tickets into the cache", copyCount);
-
+    public List<TicketUI> getAllSortStatus() {
+        List<TicketUI> read = restOperations.exchange(ticketURL + "/sort_status", HttpMethod.GET, null, ticketListType).getBody();
         return read;
     }
+
+    public List<TicketUI> getAllSortName() {
+        List<TicketUI> read = restOperations.exchange(ticketURL + "/sort_name", HttpMethod.GET, null, ticketListType).getBody();
+        return read;
+    }
+
+    public List<TicketUI> getAllSortLead() {
+        List<TicketUI> read = restOperations.exchange(ticketURL + "/sort_lead", HttpMethod.GET, null, ticketListType).getBody();
+        return read;
+    }
+
+    public List<TicketUI> getAllSort(String sort) {
+        List<TicketUI> read = restOperations.exchange(ticketURL + "/sort_" + sort, HttpMethod.GET, null, ticketListType).getBody();
+        return read;
+    }
+
+
+
+
 }
